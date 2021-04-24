@@ -7,7 +7,7 @@ function App() {
         document.title = "Travelling land page";
     });
   return (
-    <div className="App font-body" >
+    <div className="App font-body grid " >
       <LandContainer/>
     </div>
   );

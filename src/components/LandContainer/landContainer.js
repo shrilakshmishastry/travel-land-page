@@ -1,59 +1,72 @@
 import React from "react";
 import NavBar from "./navBar";
 import HeadingWithNav from "./headingWIthNav";
+import '../../App.css';
 
-const LandContainer = () =>{
-    const c1 = React.useRef(null);
-    const c2 = React.useRef(null);
+const LandContainer = () => {
 
-    React.useEffect(()=>{
-        // handleCarousel();
+    const [selected, chooseSelectedOne] = React.useState("btn1");
+    let i;
+    const[content,setContent] = React.useState("Book With Us And Book It Out of Here !");
+
+    const setBtn1 = () => {
+        chooseSelectedOne("btn1");
+        setContent("Book With Us And Book It Out of Here !");
+        let radioButton = document.getElementById("btn1");
+        radioButton.focus();
+        radioButton.setAttribute("tabIndex", "0");
+        radioButton.setAttribute("aria-checked", "true");
+        let radioButton2 = document.getElementById("btn2");
+        radioButton2.setAttribute("tabIndex", "-1");
+        radioButton2.setAttribute("aria-checked", "false");
+
+    }
+
+    const setBtn2 = () => {
+        chooseSelectedOne("btn2");
+        setContent("Book With Us And Book It!");
+        let radioButton = document.getElementById("btn2");
+        radioButton.setAttribute("tabIndex", "0");
+        radioButton.focus();
+        radioButton.setAttribute("aria-checked", "true");
+        let radioButton2 = document.getElementById("btn1");
+        radioButton2.setAttribute("tabIndex", "0");
+        radioButton2.setAttribute("aria-checked", "false");
+    }
+
+    React.useEffect(() => {
+
+        handleCarousel();
     },);
-    const handleCarousel = () =>{
+    const handleCarousel = () => {
 
-        setTimeout(()=>{
-            handleCarousel();
-            if(c1.current.classList.contains('hidden')){
-                c1.current.classList.remove('hidden');
-                c2.current.classList.add('hidden');
+       i= setTimeout(() => {
+            // handleCarousel();
+            if (selected === "btn2") {
+                setBtn1();
 
-            }else{
-                c2.current.classList.remove('hidden');
-                c1.current.classList.add('hidden');
+            } else {
+                setBtn2();
+
             }
-        },[8000]);
+        }, [50000]);
     }
 
-    const handleFirstBtnClick = () =>{
-        console.log(document.getElementById("btn1"));
-        document.getElementById("btn1").focus();
-        c1.current.classList.remove('hidden');
-        c2.current.classList.add('hidden');
-        clearInterval(8000);
+    const handleFirstBtnClick = () => {
+        setBtn1();
+        clearInterval(i);
     }
-    const handleSecondBtnClick = () =>{
-        console.log("second");
-        c2.current.classList.remove('hidden');
-        c1.current.classList.add('hidden');
-        clearInterval(8000);
+    const handleSecondBtnClick = () => {
+        setBtn2();
+        clearInterval(i);
     }
 
-    return(
-        <div className="" >
-          <div  ref={c1} id={"e1"}
-                className="carousel-1 flex flex-col "
-          >
-                <NavBar/>
-                <HeadingWithNav firstBtn={handleFirstBtnClick} SecondBtn={handleSecondBtnClick} />
-              <button id={"btn1"} onClick={handleFirstBtnClick}>first</button>
-              <button id={"btn2"} onClick={handleSecondBtnClick}>second</button>
-          </div>
-            <div ref={c2} id={"e2"}   className="carousel-2 bg-green-500 hidden">
-                <NavBar/>
-                <button id={"btn1"} onClick={handleFirstBtnClick}>first</button>
-                <button  id={"btn2"}   onClick={handleSecondBtnClick}>second</button>
-            </div>
+    return (
+        <div className="landHeight">
+            <NavBar/>
+            <HeadingWithNav content={content} selectedIndex={selected} firstBtn={handleFirstBtnClick}
+                            SecondBtn={handleSecondBtnClick}/>
         </div>
     );
-};
+}
 export default LandContainer;

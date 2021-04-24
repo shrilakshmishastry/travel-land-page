@@ -15,7 +15,7 @@ const NavBar = ()=>{
         <nav className="flex  flex-col mx-2 md:mx-0  py-4 md:flex-row justify-between ">
 
             <div className="flex flex-row  justify-between">
-                <a href="#" className="mx-3 text-primary md:text-2xl font-bold"> JALANIN</a>
+                <a href="#" className="mx-3 md:mx-10 text-primary md:text-2xl font-bold"> JALANIN</a>
                 <button aria-label="Main Menu" className="md:hidden " onClick={handleClick}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                          xmlns="http://www.w3.org/2000/svg">
