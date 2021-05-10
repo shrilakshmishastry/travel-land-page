@@ -24,7 +24,7 @@ const LandContainer = () => {
 
     const setBtn2 = () => {
         chooseSelectedOne("btn2");
-        setContent("Book With Us And Book It!");
+        setContent("Book With Us And Book It Out Here!");
         let radioButton = document.getElementById("btn2");
         radioButton.setAttribute("tabIndex", "0");
         radioButton.focus();
@@ -62,7 +62,7 @@ const LandContainer = () => {
     }
 
     return (
-        <div className="landHeight">
+        <div className="bg-primaryLight landHeight" title="Man feeling amazed!" aria-label="Image of man feeling amazed!">
             <NavBar/>
             <HeadingWithNav content={content} selectedIndex={selected} firstBtn={handleFirstBtnClick}
                             SecondBtn={handleSecondBtnClick}/>

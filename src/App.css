@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-@media screen and (min-width: 600px){
+@media screen and (min-width: 800px){
   .landHeight{
     height: 600px !important;
     background-image: url("./images/land.jpg");
@@ -11,6 +11,19 @@
     background-repeat: no-repeat;
   }
 
+}
+a:focus{
+  /*outline: dotted  blue !important;*/
+  background: #FF7424 !important;
+  color: white !important;
+  box-shadow: 0 0 8px 3px #FFBC92 !important;
+  padding: 3px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+a:hover{
+  text-decoration: underline #FF7424 solid !important;
+  text-decoration-thickness: 3px !important;
 }
 
 
@@ -27,6 +40,27 @@
   border-radius: 50%;
   position: relative;
 }
+#playButton:focus,
+#playButton:hover{
+  box-shadow: 0 0 8px 3px #FFBC92 !important;
+}
+
+.image:hover +  div{
+  display: flex  !important;
+}
+
+.image:focus +  div{
+  display: flex !important;
+}
+
+button[aria-label = "link to login page"]:hover,
+button[aria-label = "link to login page"]:focus{
+  background: white !important;
+  color:  #FF7424 !important;
+  box-shadow: 0 0 8px 3px #FFBC92 !important;
+
+}
+
 .radioInner{
   width: 5px;
   height: 5px;
