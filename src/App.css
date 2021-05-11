@@ -7,7 +7,7 @@
     height: 600px !important;
     background-image: url("./images/land.jpg");
     background-size: cover;
-    background-position:center;
+    background-position:right;
     background-repeat: no-repeat;
   }
 
@@ -53,6 +53,8 @@ a:hover{
   display: flex !important;
 }
 
+button[aria-describedby ="buttonDescription"]:hover,
+button[aria-describedby ="buttonDescription"]:focus,
 button[aria-label = "link to login page"]:hover,
 button[aria-label = "link to login page"]:focus{
   background: white !important;

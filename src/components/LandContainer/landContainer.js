@@ -62,11 +62,11 @@ const LandContainer = () => {
     }
 
     return (
-        <div className="bg-primaryLight landHeight" title="Man feeling amazed!" aria-label="Image of man feeling amazed!">
+        <header className="bg-primaryLight landHeight" title="Man feeling amazed!" aria-label="Image of man feeling amazed!">
             <NavBar/>
             <HeadingWithNav content={content} selectedIndex={selected} firstBtn={handleFirstBtnClick}
                             SecondBtn={handleSecondBtnClick}/>
-        </div>
+        </header>
     );
 }
 export default LandContainer;

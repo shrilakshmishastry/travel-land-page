@@ -13,6 +13,7 @@ module.exports = {
         coffee: '#593b34',
         sandColor: '#a38a71',
         primaryLight: '#F6DBD1',
+        primaryLightTwo: '#FCF2F1',
       },
       fontFamily:{
         body:['Roboto'],
